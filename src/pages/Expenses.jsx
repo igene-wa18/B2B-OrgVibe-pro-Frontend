@@ -11,12 +11,23 @@ export default function Expenses() {
     const [selectedExpense, setSelectedExpense] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('all');
+    const [previewImage, setPreviewImage] = useState(null);
+    
     const canSubmit = ['manager', 'employee'].includes(user?.role);
     const canApprove = ['dept_head', 'admin'].includes(user?.role);
     const canViewDetail = ['manager', 'dept_head', 'admin'].includes(user?.role);
 
     useEffect(() => { loadExpenses(); }, []);
     const loadExpenses = () => api.get('/expenses').then(r => setExpenses(r.data));
+
+    const getReceiptUrl = (url) => {
+        if (!url) return '';
+        if (url.startsWith('http://') || url.startsWith('https://')) return url;
+        // Prepend backend host if it is a local upload relative URL
+        const apiBase = import.meta.env.VITE_API_URL || '';
+        const backendHost = apiBase.replace('/api', '');
+        return `${backendHost}${url}`;
+    };
 
     const submitExpense = async (e) => {
         e.preventDefault();
@@ -118,7 +129,13 @@ export default function Expenses() {
                             </div>
                             {selectedExpense.receipt_url && (
                                 <div style={{marginTop: '12px'}}>
-                                    <a href={selectedExpense.receipt_url} target="_blank" rel="noreferrer" className="btn btn-sm btn-primary">📎 View Receipt / Bill</a>
+                                    <button 
+                                        type="button" 
+                                        className="btn btn-sm btn-primary"
+                                        onClick={() => setPreviewImage(getReceiptUrl(selectedExpense.receipt_url))}
+                                    >
+                                        📎 View Receipt / Bill
+                                    </button>
                                 </div>
                             )}
                             <div className="detail-meta">
@@ -145,9 +162,14 @@ export default function Expenses() {
                                     <td>
                                         <div>{e.description.length > 50 ? e.description.substring(0, 50) + '...' : e.description}</div>
                                         {e.receipt_url && (
-                                            <a href={e.receipt_url} target="_blank" rel="noreferrer" className="text-primary text-sm font-semibold" style={{display: 'inline-block', marginTop: '4px'}} onClick={ev => ev.stopPropagation()}>
+                                            <button 
+                                                type="button" 
+                                                className="btn btn-sm btn-link text-primary" 
+                                                style={{ padding: 0, background: 'none', border: 'none', textDecoration: 'underline', marginTop: '4px', cursor: 'pointer' }}
+                                                onClick={ev => { ev.stopPropagation(); setPreviewImage(getReceiptUrl(e.receipt_url)); }}
+                                            >
                                                 📎 View Bill
-                                            </a>
+                                            </button>
                                         )}
                                     </td>
                                     <td><span className={`badge badge-${e.status}`}>{e.status}</span></td>
@@ -164,6 +186,21 @@ export default function Expenses() {
                     </table>
                 </div>
             </div>
+
+            {/* Receipt Modal Preview */}
+            {previewImage && (
+                <div className="modal-overlay" onClick={() => setPreviewImage(null)}>
+                    <div className="modal-content receipt-preview-modal" onClick={e => e.stopPropagation()}>
+                        <div className="modal-header" style={{ width: '100%', borderBottom: 'none', padding: '0 0 12px 0' }}>
+                            <h3>📎 Bill Preview</h3>
+                            <button className="btn btn-sm btn-danger" onClick={() => setPreviewImage(null)}>✕ Close</button>
+                        </div>
+                        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+                            <img src={previewImage} alt="Receipt Preview" className="receipt-preview-image" />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
