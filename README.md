@@ -1,232 +1,487 @@
-# 🏢 WORKFORCE PRO - Frontend
+# 🌀 OrgVibe Pro — Frontend
 
-A modern, role-based B2B workforce management application built with **React**, **Vite**, and **Chart.js**. WORKFORCE PRO provides comprehensive HR management capabilities including attendance tracking, leave management, expense handling, and detailed analytics.
+> **Enterprise-grade HR & Workforce Management Platform** built with React, Vite, and Chart.js.
 
-**Live Demo:** [https://b2-b-work-beta-app-frontend.vercel.app](https://b2-b-work-beta-app-frontend.vercel.app)
+OrgVibe Pro is a modern, role-based B2B organization management application that empowers companies to manage attendance, leaves, expenses, employees, departments, and internal communications — all from a single, beautiful dark-themed dashboard.
+
+**🔗 Live Demo:** [https://b2-b-work-beta-app-frontend.vercel.app](https://b2-b-work-beta-app-frontend.vercel.app)
 
 ---
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Installation & Setup](#installation--setup)
-- [Usage](#usage)
-- [Architecture](#architecture)
-- [Key Components](#key-components)
-- [Pages & Features](#pages--features)
-- [Authentication & Authorization](#authentication--authorization)
-- [API Integration](#api-integration)
-- [Environment Variables](#environment-variables)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+- [Overview](#-overview)
+- [Screenshots](#-screenshots)
+- [Demo Credentials](#-demo-credentials)
+- [Features](#-features)
+- [Tech Stack](#️-tech-stack)
+- [Project Structure](#-project-structure)
+- [Installation & Setup](#-installation--setup)
+- [Usage Guide](#-usage-guide)
+- [User Roles & Permissions](#-user-roles--permissions)
+- [Architecture](#-architecture)
+- [Key Components](#-key-components)
+- [API Integration](#-api-integration)
+- [Environment Variables](#-environment-variables)
+- [Deployment](#-deployment)
+- [Troubleshooting](#-troubleshooting)
+- [Roadmap](#-roadmap)
+- [License](#-license)
 
 ---
 
 ## 🎯 Overview
 
-**WORKFORCE PRO** is an enterprise-grade HR management platform designed to streamline workforce operations. It provides a comprehensive suite of tools for managing:
+**OrgVibe Pro** is an enterprise HR management platform designed to streamline every aspect of workforce operations. It provides a comprehensive suite of tools:
 
-- **Attendance**: Real-time check-in/check-out with time tracking
-- **Leave Management**: Request and approve leaves with calendar view
-- **Expense Management**: Submit and track business expenses with receipt uploads
-- **Employee Management**: Centralized employee database with departmental organization
-- **Analytics & Reporting**: Visual dashboards with charts and performance metrics
-- **Memos**: Internal communication and announcements
+| Module | What it Does |
+|--------|-------------|
+| 📊 **Dashboard** | Real-time analytics, KPI cards, and visual charts |
+| 📋 **Attendance** | Check-in/out tracking, monthly records, team overviews |
+| 📅 **Leave Management** | Request, approve, and visualize leaves on a calendar |
+| 💰 **Expense Tracking** | Submit expenses with receipt uploads and approval workflow |
+| 👥 **Employee Directory** | Searchable database with role and department info |
+| 🏢 **Department Management** | Create departments and assign employees |
+| 📝 **Memos & Announcements** | Internal communication with real-time notifications |
 
-The platform supports **4 role-based access levels** (Admin, Department Head, Manager, Employee) with granular permission controls.
+The platform supports **4 role-based access levels** — Admin, Department Head, Manager, and Employee — with granular permission controls so every user sees exactly what they need.
+
+---
+
+## 📸 Screenshots
+
+### Dashboard — Analytics & KPIs
+The Admin dashboard displays live KPI cards (Total Employees, Departments, Present Today, Pending Leaves, Pending Expenses) alongside interactive pie charts and doughnut charts for quick decision-making.
+
+![Dashboard — Admin View](./screenshots/Screenshot%202026-06-24%20132934.png)
+
+---
+
+### Departments — Management View
+Admins can view all departments, expand a department to see its members (name, email, role, joined date), create new departments, and delete existing ones.
+
+![Departments Page](./screenshots/Screenshot%202026-06-24%20133017.png)
+
+---
+
+### Employees — Directory & Detail Panel
+A searchable employee table lists all users with their role badge, department, status, and join date. Clicking any employee opens a detailed side panel showing their full profile.
+
+![Employees Page](./screenshots/Screenshot%202026-06-24%20133058.png)
+
+---
+
+### Employees — Add New Employee Form
+Admins can add a new employee inline by filling in Name, Email, Password, Role, and Department — then clicking **Add**.
+
+![Add Employee Form](./screenshots/Screenshot%202026-06-24%20133121.png)
+
+---
+
+### Attendance — Team Overview
+View monthly attendance records for all employees. Filter by month/year, search by name, and export the table to CSV with a single click.
+
+![Attendance Page](./screenshots/Screenshot%202026-06-24%20133157.png)
+
+---
+
+### Leave Requests — List View with Approval
+Managers and Admins see all pending leave requests in a table. Clicking a request opens its detail panel with **Approve** and **Reject** buttons.
+
+![Leave Requests — List View](./screenshots/Screenshot%202026-06-24%20133231.png)
+
+---
+
+### Leave Requests — Calendar View
+Switch to the calendar view to visualize approved and pending leaves across the entire month. Color-coded entries make it easy to spot scheduling conflicts.
+
+![Leave Requests — Calendar View](./screenshots/Screenshot%202026-06-24%20133403.png)
+
+---
+
+### Expenses — Submission & Approval
+Employees submit expenses with a category, amount, description, and optional receipt image. Managers and Admins can view the receipt and approve or reject with one click.
+
+![Expenses Page](./screenshots/Screenshot%202026-06-24%20133436.png)
+
+---
+
+### Memos & Announcements
+Post internal memos or company-wide announcements. All users receive real-time notifications when a new memo is published.
+
+![Memos Page](./screenshots/Screenshot%202026-06-24%20133500.png)
+
+---
+
+### Notifications Panel
+A bell icon in the top bar shows the unread count. Clicking it opens the notification panel with timestamped alerts for new memos, approvals, and rejections.
+
+![Notifications Panel](./screenshots/Screenshot%202026-06-24%20133524.png)
+
+---
+
+## 🔑 Demo Credentials
+
+Use the following accounts to explore OrgVibe Pro on the live demo without registering:
+
+> **Live Demo URL:** [https://b2-b-work-beta-app-frontend.vercel.app](https://b2-b-work-beta-app-frontend.vercel.app)
+
+### 👑 Admin Account
+Has full access to all modules, including Departments, all Employees, all Expenses, and system-wide analytics.
+
+| Field | Value |
+|-------|-------|
+| **Email** | `hr@smartops.com` |
+| **Password** | `Hr@123` |
+
+---
+
+### 👔 Manager Account
+Can view and manage their team's attendance, approve/reject leaves, submit expenses, and send memos.
+
+| Field | Value |
+|-------|-------|
+| **Email** | `manager.tech@smartops.com` |
+| **Password** | `Manager@123` |
+
+---
+
+### 👤 Employee Account
+Can check in/out, view personal attendance records, submit leave requests, and read memos.
+
+| Field | Value |
+|-------|-------|
+| **Email** | `sneha@smartops.com` |
+| **Password** | `Emp@123` |
+
+> **Tip:** Start with the Admin account to explore every feature. Then log in as Employee to see how the UI adapts — menus, dashboard widgets, and action buttons all change based on the role.
 
 ---
 
 ## ✨ Features
 
-### Core Features
+### Core Modules
 
 | Feature | Description | Access Level |
 |---------|-------------|--------------|
-| **Dashboard** | Real-time analytics, attendance cards, performance metrics | All Roles |
-| **Attendance Tracking** | Check-in/out, monthly records, attendance statistics | All Roles |
-| **Leave Management** | Request/approve leaves, calendar view, team oversight | All Roles |
-| **Expense Tracking** | Submit expenses, upload receipts, approval workflow | Manager+ |
-| **Employee Management** | View/manage employees, departmental assignment | Admin/Dept Head/Manager |
-| **Department Management** | Create/manage departments, assignments | Admin Only |
-| **Memos** | Send internal memos and announcements | All Roles |
-| **Notifications** | Real-time notification panel with unread count | All Roles |
-| **Reports** | Visual analytics with charts and trends | Admin/Dept Head |
-| **Export** | Download data in CSV format | Applicable Roles |
+| **Dashboard** | KPI cards, expense pie chart, attendance doughnut, monthly trends | All Roles |
+| **Attendance Tracking** | Check-in/out, monthly records, attendance stats, CSV export | All Roles |
+| **Leave Management** | Request leaves, list/calendar views, approve/reject workflow | All Roles |
+| **Expense Tracking** | Submit expenses, upload receipts, approval workflow, CSV export | Manager+ |
+| **Employee Management** | View/add/deactivate employees, role assignment | Admin / Dept Head / Manager |
+| **Department Management** | Create/delete departments, view member lists | Admin Only |
+| **Memos & Announcements** | Post and read internal communications | All Roles |
+| **Notifications** | Real-time notification panel with unread count badge | All Roles |
 
-### Technical Features
+### Technical Highlights
 
-- ✅ Role-Based Access Control (RBAC)
-- ✅ Protected Routes with Authentication
-- ✅ Real-time Notifications (15s polling)
-- ✅ File Upload Support (Receipt Images)
-- ✅ Interactive Charts & Analytics (Pie, Doughnut, Line, Bar)
-- ✅ Responsive Design (Mobile-Friendly)
-- ✅ Search & Filter Functionality
-- ✅ Calendar View for Leave Management
-- ✅ CSV Export Capabilities
-- ✅ SPA with Client-Side Routing
+- ✅ **Role-Based Access Control (RBAC)** — menus, routes, and UI elements adapt per role
+- ✅ **JWT Authentication** — tokens stored in `localStorage`, auto-attached to all API requests
+- ✅ **Protected Routes** — unauthorized access redirects gracefully
+- ✅ **Real-time Notifications** — polling every 15 seconds for new alerts
+- ✅ **Receipt Uploads** — multipart form upload with cloud storage (Cloudinary)
+- ✅ **Interactive Charts** — Pie, Doughnut, Line, Bar via Chart.js
+- ✅ **CSV Export** — attendance and expense tables exportable in one click
+- ✅ **Responsive Design** — works on mobile, tablet, and desktop
+- ✅ **Calendar View** — visual month-based leave overview
+- ✅ **Search & Filter** — across employees, attendance, expenses, and leaves
 
 ---
 
-## 🛠 Tech Stack
+## 🛠️ Tech Stack
 
-### Frontend
-- **Framework**: [React 19.2.4](https://react.dev) - UI library
-- **Build Tool**: [Vite 7.3.1](https://vitejs.dev) - Next-generation build tool
-- **Routing**: [React Router DOM 7.13.1](https://reactrouter.com) - Client-side routing
-- **HTTP Client**: [Axios 1.13.6](https://axios-http.com) - API requests
-- **Charts**: [Chart.js 4.5.1](https://www.chartjs.org) + [React-ChartJS-2 5.3.1](https://react-chartjs-2.js.org) - Data visualization
-- **Styling**: CSS3 with CSS Variables
-
-### Development
-- **Language**: JavaScript (ES6+)
-- **Package Manager**: npm
-- **Deployment**: Vercel
-- **Type Support**: TypeScript (configured but using JavaScript)
+| Layer | Technology | Version |
+|-------|-----------|---------|
+| **UI Framework** | [React](https://react.dev) | 19.2.4 |
+| **Build Tool** | [Vite](https://vitejs.dev) | 7.3.1 |
+| **Routing** | [React Router DOM](https://reactrouter.com) | 7.13.1 |
+| **HTTP Client** | [Axios](https://axios-http.com) | 1.13.6 |
+| **Charts** | [Chart.js](https://www.chartjs.org) + [react-chartjs-2](https://react-chartjs-2.js.org) | 4.5.1 / 5.3.1 |
+| **Styling** | Vanilla CSS3 with CSS Variables | — |
+| **Language** | JavaScript (ES6+) | — |
+| **Package Manager** | npm | — |
+| **Hosting** | [Vercel](https://vercel.com) | — |
 
 ---
 
 ## 📁 Project Structure
 
 ```
-B2B-workBeta-app-Frontend/
-├── src/
-│   ├── components/              # Reusable UI components
-│   │   ├── Sidebar.jsx         # Navigation sidebar with role-based menu
-│   │   ├── Topbar.jsx          # Header with notifications & user role
-│   │   ├── ProtectedRoute.jsx  # Role-based route protection
-│   │   └── NotificationPanel.jsx # Real-time notifications display
-│   │
-│   ├── context/                # React Context for global state
-│   │   └── AuthContext.jsx     # Authentication & user state management
-│   │
-│   ├── pages/                  # Page components (one per route)
-│   │   ├── Login.jsx           # Authentication login page
-│   │   ├── Register.jsx        # User registration page
-│   │   ├── Dashboard.jsx       # Main dashboard with analytics
-│   │   ├── Attendance.jsx      # Attendance tracking & records
-│   │   ├── Leaves.jsx          # Leave management with calendar
-│   │   ├── Expenses.jsx        # Expense submission & approval
-│   │   ├── Employees.jsx       # Employee directory & management
-│   │   ├── Departments.jsx     # Department management (Admin)
-│   │   ├── Memos.jsx           # Internal memos & announcements
-│   │   └── Reports.jsx         # Detailed reporting (unused)
-│   │
-│   ├── utils/                  # Utility functions & helpers
-│   │   └── api.js             # Axios instance with interceptors
-│   │
-│   ├── App.jsx                 # Main app component with routing
-│   ├── App.css                 # Global styles & responsive design
-│   └── main.jsx                # React DOM entry point
+client/
+├── public/
+│   ├── logo.png                    # OrgVibe Pro brand logo
+│   └── vite.svg                    # Vite default icon
 │
-├── public/                     # Static assets
-├── index.html                  # HTML entry point
-├── vite.config.js             # Vite configuration
-├── vercel.json                # Vercel deployment config
-├── package.json               # Dependencies & scripts
-├── package-lock.json          # Dependency lock file
-└── README.md                  # This file
+├── screenshots/                    # App screenshots for README
+│
+├── src/
+│   ├── components/                 # Reusable UI components
+│   │   ├── Sidebar.jsx             # Role-based navigation sidebar with logo
+│   │   ├── Topbar.jsx              # Header — notifications bell + role badge
+│   │   ├── ProtectedRoute.jsx      # Role-gated route wrapper
+│   │   └── NotificationPanel.jsx   # Slide-out notifications panel
+│   │
+│   ├── context/
+│   │   └── AuthContext.jsx         # Global auth state — login, logout, user
+│   │
+│   ├── pages/
+│   │   ├── Login.jsx               # Sign-in screen with brand logo
+│   │   ├── Register.jsx            # Account creation screen
+│   │   ├── Dashboard.jsx           # KPI cards + analytics charts
+│   │   ├── Attendance.jsx          # Attendance tracking & records
+│   │   ├── Leaves.jsx              # Leave requests — list + calendar
+│   │   ├── Expenses.jsx            # Expense submission & approval
+│   │   ├── Employees.jsx           # Employee directory & management
+│   │   ├── Departments.jsx         # Department management (Admin)
+│   │   └── Memos.jsx               # Internal memos & announcements
+│   │
+│   ├── utils/
+│   │   └── api.js                  # Axios instance with JWT interceptor
+│   │
+│   ├── App.jsx                     # Root component — router setup
+│   ├── App.css                     # Global dark glassmorphism design system
+│   └── main.jsx                    # React DOM entry point
+│
+├── index.html                      # HTML shell — title, favicon, root div
+├── vite.config.js                  # Vite config — dev proxy, React plugin
+├── vercel.json                     # Vercel SPA routing config
+├── package.json                    # Scripts & dependencies
+└── README.md                       # This file
 ```
 
 ---
 
 ## 💻 Installation & Setup
 
-### Prerequisites
-- Node.js 16+ and npm 8+
-- Backend server running (see API endpoint configuration)
+Follow these steps to run OrgVibe Pro locally. You will need both the **frontend** (this repo) and the **backend server** running simultaneously.
 
-### Step 1: Clone Repository
+### Prerequisites
+
+Before you begin, make sure you have the following installed:
+
+- **Node.js** v16 or higher — [Download](https://nodejs.org)
+- **npm** v8 or higher (comes with Node.js)
+- **Git** — [Download](https://git-scm.com)
+- The **OrgVibe Pro backend server** running on `http://localhost:5001`
+
+---
+
+### Step 1 — Clone the Repository
+
+Open a terminal and run:
+
 ```bash
 git clone https://github.com/igene-wa18/B2B-workBeta-app-Frontend.git
 cd B2B-workBeta-app-Frontend
 ```
 
-### Step 2: Install Dependencies
+---
+
+### Step 2 — Install Dependencies
+
+Install all required npm packages:
+
 ```bash
 npm install
 ```
 
-### Step 3: Configure Environment
-Create a `.env.local` file in the project root:
+This will install React, Vite, Axios, React Router, Chart.js, and all other dependencies listed in `package.json`.
 
-```env
-# API Configuration
-VITE_API_URL=http://localhost:5001/api
+---
 
-# Optional: Add other environment variables as needed
+### Step 3 — Configure Environment Variables
+
+Create a `.env.local` file in the **project root** (same folder as `package.json`):
+
+```bash
+# Create the file (Windows)
+echo. > .env.local
+
+# Or on macOS/Linux
+touch .env.local
 ```
 
-### Step 4: Start Development Server
+Then open `.env.local` and add:
+
+```env
+# Backend API URL — update if your server runs on a different port
+VITE_API_URL=http://localhost:5001/api
+```
+
+> **Note:** The Vite dev server automatically proxies `/api` requests to `http://localhost:5001`, so you may not need this variable unless you are connecting to a remote backend.
+
+---
+
+### Step 4 — Start the Development Server
+
 ```bash
 npm run dev
 ```
 
-The application will open at `http://localhost:3000` with API proxy to `http://localhost:5001`
+Vite will start the app and print the local URL:
 
-### Step 5: Build for Production
+```
+  VITE v7.3.1  ready in 300 ms
+
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://192.168.x.x:3000/
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser. The app will hot-reload automatically whenever you save a file.
+
+---
+
+### Step 5 — Log In
+
+Navigate to [http://localhost:3000/login](http://localhost:3000/login) and sign in using any of the [Demo Credentials](#-demo-credentials) listed above, or register a new account at `/register`.
+
+---
+
+### Step 6 — Build for Production (Optional)
+
+When you're ready to deploy, create an optimized production build:
+
 ```bash
 npm run build
 ```
 
-### Step 6: Preview Production Build
+The output is placed in the `dist/` folder. You can preview it locally with:
+
 ```bash
 npm run preview
 ```
 
 ---
 
-## 🚀 Usage
+## 🚀 Usage Guide
 
-### Access the Application
+### Logging In
 
-1. **Login Page** (`/login`)
-   - Enter email and password
-   - First-time users should register via `/register`
+1. Go to `/login`
+2. Enter your **Email** and **Password**
+3. Click **Sign In** — you will be redirected to your Dashboard
 
-2. **Dashboard** (`/dashboard`)
-   - View real-time statistics
-   - Check-in/check-out for non-admin users
-   - View analytics (Admin/Dept Head only)
+> First time? Go to `/register` to create a new account. Select your role from the dropdown (for testing purposes).
 
-3. **Navigation**
-   - Use the sidebar to navigate between sections
-   - Navigation items vary by user role
-   - Logout via the sidebar user panel
+---
 
-### User Roles & Permissions
+### Navigating the App
 
-#### 👨‍💼 Employee
-- ✓ View personal dashboard
-- ✓ Check-in/check-out
-- ✓ View personal attendance records
-- ✓ Request leaves
-- ✓ View personal memos
+- The **sidebar** on the left contains all navigation links. The links shown depend on your role — Admins see everything; Employees see a simplified menu.
+- The **top bar** shows the current page title, your role badge, and a notification bell.
+- Click the **bell icon** to open the Notifications panel.
+- Your **name and avatar** appear at the bottom of the sidebar. Click the power icon (⏻) to log out.
 
-#### 👨‍✈️ Manager
-- ✓ All Employee permissions
-- ✓ View team attendance
-- ✓ View team leave requests (approve/reject)
-- ✓ Submit expenses
-- ✓ View team memos
+---
 
-#### 🏢 Department Head
-- ✓ All Manager permissions
-- ✓ Manage department employees
-- ✓ Approve/reject expenses
-- ✓ View department analytics & reports
+### Dashboard
 
-#### 🔑 Admin
-- ✓ All permissions
-- ✓ Manage all users and departments
-- ✓ View system-wide analytics
-- ✓ Create departments
-- ✓ Manage all expenses
+After logging in, you land on the Dashboard:
+
+- **KPI Cards** at the top show: Total Employees, Departments, Present Today, Pending Leaves, Pending Expenses
+- **Employees / Managers** see a "Today's Attendance" card with **Check In** and **Check Out** buttons
+- **Admins / Dept Heads** see interactive analytics charts:
+  - Expenses by Category (Pie Chart)
+  - Attendance Status Breakdown (Doughnut Chart)
+  - Monthly Expense Trends (Line Chart)
+  - Top Performing Employees (Bar Chart)
+
+---
+
+### Attendance
+
+Navigate to **Attendance** from the sidebar:
+
+1. Use the **month/year dropdowns** to select the time period
+2. View the table showing each employee's check-in, check-out, hours worked, and status
+3. Use the **search bar** to filter by employee name
+4. Click **Export CSV** to download the records as a spreadsheet
+
+---
+
+### Leave Requests
+
+Navigate to **Leave Requests**:
+
+1. **Employees** can submit a new leave request by filling in start date, end date, and reason
+2. Toggle between **List View** (table of all requests with status badges) and **Calendar View** (visual monthly overview)
+3. **Managers / Admins** see a detail panel when clicking a request — click **Approve** or **Reject**
+4. Use the **status filter** dropdown to view only Pending, Approved, or Rejected requests
+
+---
+
+### Expenses
+
+Navigate to **Expenses**:
+
+1. Click **+ Submit Expense** and fill in: Amount (₹), Category, Description, and optionally attach a Receipt image
+2. The table shows all expenses with their status (Pending / Approved / Rejected)
+3. Click any row to expand the detail panel; click **View Receipt / Bill** to preview the uploaded image
+4. **Admins / Dept Heads** see **Approve** and **Reject** buttons in the detail panel
+5. Click **Export CSV** to download the expense list
+
+---
+
+### Memos
+
+Navigate to **Memos**:
+
+1. Click **+ New Memo** and enter a title and body to post an announcement
+2. All users can read memos in reverse-chronological order
+3. Admins and the memo author can **Delete** memos
+4. New memos trigger a **real-time notification** for all users
+
+---
+
+## 👥 User Roles & Permissions
+
+OrgVibe Pro uses **Role-Based Access Control (RBAC)**. Each role unlocks progressively more functionality:
+
+### 👤 Employee
+| Permission | Access |
+|-----------|--------|
+| View personal Dashboard | ✅ |
+| Check In / Check Out | ✅ |
+| View own Attendance records | ✅ |
+| Submit Leave Requests | ✅ |
+| View own Leave status | ✅ |
+| Read Memos | ✅ |
+| View Expenses | ❌ |
+| Approve/Reject leaves | ❌ |
+
+---
+
+### 👔 Manager
+| Permission | Access |
+|-----------|--------|
+| All Employee permissions | ✅ |
+| View team Attendance | ✅ |
+| Approve/Reject team Leave Requests | ✅ |
+| Submit Expenses | ✅ |
+| View team Memos | ✅ |
+| View Employee Directory | ✅ |
+
+---
+
+### 🏢 Department Head
+| Permission | Access |
+|-----------|--------|
+| All Manager permissions | ✅ |
+| Manage department Employees | ✅ |
+| Approve/Reject Expenses | ✅ |
+| View department Analytics | ✅ |
+
+---
+
+### 👑 Admin
+| Permission | Access |
+|-----------|--------|
+| All permissions | ✅ |
+| Manage all Employees (add/deactivate) | ✅ |
+| Manage all Departments (create/delete) | ✅ |
+| View system-wide Analytics & Reports | ✅ |
+| Approve/Reject all Expenses and Leaves | ✅ |
+| Post and Delete Memos | ✅ |
 
 ---
 
@@ -235,299 +490,204 @@ npm run preview
 ### Authentication Flow
 
 ```
-Login → API Call → Store Token → Set Auth Context → Redirect to Dashboard
+User enters credentials
+        ↓
+POST /auth/login → Backend validates → Returns JWT token
+        ↓
+Token stored in localStorage as "ws_token"
+        ↓
+AuthContext stores user object (name, email, role, etc.)
+        ↓
+ProtectedRoute checks token + role → Renders page or redirects
+        ↓
+Logout clears token + resets AuthContext → Redirects to /login
 ```
-
-The authentication context manages:
-- User state (name, email, role, etc.)
-- JWT token storage in localStorage
-- Login/Logout handlers
-- Auto-login on app reload
 
 ### State Management
 
-**Global State (React Context):**
-- `AuthContext`: User authentication, token, login/logout
-
-**Local State (useState):**
-- Component-specific data (forms, filters, UI states)
+| Type | Tool | Used For |
+|------|------|----------|
+| **Global** | React Context (`AuthContext`) | Auth state — user, token, login, logout |
+| **Local** | `useState` | Forms, filters, UI toggles, fetched data |
+| **Side Effects** | `useEffect` | API calls on mount, polling for notifications |
 
 ### API Communication
 
-All API calls use the `api` utility which:
-- Intercepts requests to add JWT token to headers
-- Uses the configured `VITE_API_URL` base URL
-- Handles error responses
+All API calls go through `src/utils/api.js`, a pre-configured Axios instance that:
 
-**Request Pattern:**
+- Automatically attaches the JWT token from `localStorage` to every request header
+- Uses `VITE_API_URL` as the base URL (falls back to `/api` for the dev proxy)
+- Returns clean error responses for error handling
+
 ```javascript
-import api from '../utils/api';
+// src/utils/api.js
+const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL || '/api'
+});
 
-// GET
-api.get('/endpoint').then(res => { /* data */ })
-
-// POST
-api.post('/endpoint', data).then(res => { /* response */ })
-
-// PATCH
-api.patch('/endpoint/id/action').then(res => { /* response */ })
+api.interceptors.request.use(config => {
+    const token = localStorage.getItem('ws_token');
+    if (token) config.headers.Authorization = `Bearer ${token}`;
+    return config;
+});
 ```
 
 ---
 
 ## 🧩 Key Components
 
-### Sidebar Component
-Displays role-based navigation menu with:
-- Dynamic menu items based on user role
-- User info & avatar
-- Logout button
+### `Sidebar.jsx`
+- Displays the **OrgVibe Pro logo** and brand name
+- Renders a **role-specific navigation menu** — different links for Admin vs Employee
+- Shows the logged-in user's avatar, name, and role at the bottom
+- Provides a **Logout** button (⏻ icon)
 
-### Topbar Component
-Header bar featuring:
-- Page title
-- Notification bell with unread count
-- User role badge
-- Notification panel toggle
+### `Topbar.jsx`
+- Shows the **current page title**
+- Displays a **notification bell** with a red unread-count badge
+- Shows the user's **role badge** (e.g., ADMIN, MANAGER)
+- Toggles the `NotificationPanel` on click
 
-### ProtectedRoute Component
-Guards routes based on:
-- Authentication status
-- User role permissions
-- Redirects unauthorized users to login or dashboard
+### `ProtectedRoute.jsx`
+- Wraps sensitive routes and checks:
+  1. Is the user authenticated?
+  2. Does the user's role match the allowed roles list?
+- Redirects unauthorized users to `/login` or `/dashboard`
 
-### NotificationPanel Component
-Shows:
-- Real-time notifications
-- Unread notification count
-- Notification management
-
----
-
-## 📄 Pages & Features
-
-### 🔐 Login & Register (`/login`, `/register`)
-- Email/password authentication
-- Form validation
-- Error messages
-- Link to registration page
-
-### 📊 Dashboard (`/dashboard`)
-**Features:**
-- Real-time statistics cards (Total Employees, Departments, Present Today, etc.)
-- **For Employees/Managers:**
-  - Today's attendance card with check-in/out buttons
-  - Real-time attendance status
-- **For Admin/Dept Head:**
-  - Expense by category (Pie Chart)
-  - Attendance status breakdown (Doughnut Chart)
-  - Monthly expense trends (Line Chart)
-  - Top performing employees (Bar Chart)
-
-### 📋 Attendance (`/attendance`)
-**Features:**
-- **My Attendance Tab:**
-  - View personal attendance records
-  - Monthly statistics (Present, Late, Absent, Leave)
-  - Attendance percentage
-  - Search & filter by date range
-- **Team View Tab** (Manager/Dept Head/Admin):
-  - View all team member attendance
-  - Search by employee name
-  - Export to CSV
-- **Controls:**
-  - Month/Year selector
-  - CSV export functionality
-
-### 📅 Leaves (`/leaves`)
-**Features:**
-- **Request Leave:**
-  - Date range picker
-  - Reason textarea
-  - Submit requests
-- **View Leaves:**
-  - List view with status badges
-  - Calendar view with color-coded leaves
-  - Filter by status (Pending, Approved, Rejected)
-- **Approval** (Manager/Dept Head/Admin):
-  - View pending requests
-  - Approve/reject leaves
-  - Search by employee name
-- **Calendar Navigation:**
-  - Month picker
-  - Visual representation of leaves
-
-### 💰 Expenses (`/expenses`)
-**Features:**
-- **Submit Expense:**
-  - Amount input (in ₹)
-  - Category selection (Office Supplies, Travel, Equipment, Software, Other)
-  - Description
-  - Receipt/Bill upload (optional)
-- **View Expenses:**
-  - Searchable table
-  - Status filter (Pending, Approved, Rejected)
-  - Receipt preview modal
-- **Approval** (Dept Head/Admin):
-  - Approve/reject with one-click actions
-  - View receipt images
-  - Detail panel
-- **Export:**
-  - Download filtered data to CSV
-
-### 👥 Employees (`/employees`)
-**Features:**
-- Searchable employee directory
-- Filter by department
-- Employee details view
-- Add/edit employee (Admin/Dept Head)
-- Manage role assignments
-
-### 🏢 Departments (`/departments`)
-**Features (Admin Only):**
-- View all departments
-- Create new departments
-- Assign employees to departments
-- Department details management
-
-### 📝 Memos (`/memos`)
-**Features:**
-- View internal memos
-- Send memos (based on role)
-- Read/unread status
-- Timestamp tracking
-
----
-
-## 🔐 Authentication & Authorization
-
-### JWT Token Management
-- Tokens stored in `localStorage` as `ws_token`
-- Auto-attached to all API requests via interceptor
-- Validated on app load
-- Cleared on logout
-
-### Role-Based Access Control
-```javascript
-// ProtectedRoute enforces role checking
-<Route path="/expenses" 
-  element={
-    <ProtectedRoute roles={['manager', 'dept_head', 'admin']}>
-      <Expenses />
+```jsx
+// Example usage in App.jsx
+<Route path="/departments" element={
+    <ProtectedRoute roles={['admin']}>
+        <Departments />
     </ProtectedRoute>
-  } 
-/>
+} />
 ```
 
-### Dynamic UI Rendering
-```javascript
-const canViewAnalytics = ['admin', 'dept_head'].includes(user?.role);
+### `NotificationPanel.jsx`
+- Slides in from the top-right corner
+- Fetches unread notifications every 15 seconds
+- Displays notification type, message, and timestamp
+- Closes on the X button or outside click
 
-{canViewAnalytics && <AnalyticsSection />}
-```
+### `AuthContext.jsx`
+- Provides `user`, `loading`, `login()`, `logout()`, and `signup()` to the entire app
+- On app load, reads the JWT from `localStorage` and calls `GET /auth/me` to restore the session
+- All child components access auth state via the `useAuth()` hook
 
 ---
 
 ## 🔌 API Integration
 
-### Base Configuration
-```javascript
-// src/utils/api.js
-const api = axios.create({ 
-    baseURL: import.meta.env.VITE_API_URL || '/api' 
-});
+### Core Endpoints
+
+**Authentication**
+```
+POST /auth/login          — Sign in, returns JWT token
+POST /auth/signup         — Register new account
+GET  /auth/me             — Get current user from token
 ```
 
-### Proxy Configuration (Development)
+**Dashboard & Reports**
+```
+GET /stats/dashboard      — KPI cards data
+GET /stats/reports        — Charts data (expenses, attendance trends)
+```
+
+**Attendance**
+```
+GET  /attendance/my       — Personal attendance (query: month, year)
+GET  /attendance/today    — Today's attendance for all employees
+GET  /attendance/team     — Team attendance (Manager+)
+GET  /attendance/stats    — Monthly stats (present %, absent, late)
+POST /attendance/check-in — Record check-in
+POST /attendance/check-out — Record check-out
+```
+
+**Leave Requests**
+```
+GET   /leaves/my              — Personal leaves
+GET   /leaves/team            — All team leaves (Manager+)
+POST  /leaves                 — Submit new leave request
+PATCH /leaves/:id/approve     — Approve a leave
+PATCH /leaves/:id/reject      — Reject a leave
+```
+
+**Expenses**
+```
+GET   /expenses               — All expenses (filtered by role)
+POST  /expenses               — Submit expense (multipart/form-data for receipt)
+PATCH /expenses/:id/approve   — Approve expense
+PATCH /expenses/:id/reject    — Reject expense
+```
+
+**Employees & Departments**
+```
+GET  /employees               — Employee directory
+POST /employees               — Add new employee (Admin)
+GET  /departments             — All departments with member lists
+POST /departments             — Create department (Admin)
+```
+
+**Notifications**
+```
+GET /notifications/unread     — Unread notification count + list
+```
+
+### Vite Dev Proxy
+
+The `vite.config.js` proxies all `/api` and `/uploads` requests to the backend, so you never need to worry about CORS in development:
+
 ```javascript
 // vite.config.js
-proxy: {
-  '/api': {
-    target: 'http://localhost:5001',
-    changeOrigin: true,
-    secure: false
-  },
-  '/uploads': {
-    target: 'http://localhost:5001',
-    changeOrigin: true
-  }
+server: {
+    port: 3000,
+    proxy: {
+        '/api': {
+            target: 'http://localhost:5001',
+            changeOrigin: true,
+            secure: false
+        },
+        '/uploads': {
+            target: 'http://localhost:5001',
+            changeOrigin: true
+        }
+    }
 }
 ```
-
-### API Endpoints Used
-
-**Authentication:**
-- `POST /auth/login` - Login
-- `POST /auth/signup` - Register
-- `GET /auth/me` - Get current user
-
-**Attendance:**
-- `GET /attendance/my?month=X&year=Y` - Personal attendance
-- `GET /attendance/today` - Today's attendance
-- `GET /attendance/team` - Team attendance
-- `GET /attendance/stats?month=X&year=Y` - Attendance statistics
-- `POST /attendance/check-in` - Check-in
-- `POST /attendance/check-out` - Check-out
-
-**Leaves:**
-- `GET /leaves/my` - Personal leave requests
-- `GET /leaves/team` - Team leave requests
-- `POST /leaves` - Submit leave request
-- `PATCH /leaves/:id/approve` - Approve leave
-- `PATCH /leaves/:id/reject` - Reject leave
-
-**Expenses:**
-- `GET /expenses` - Get all expenses
-- `POST /expenses` - Submit expense (multipart/form-data)
-- `PATCH /expenses/:id/approve` - Approve expense
-- `PATCH /expenses/:id/reject` - Reject expense
-
-**Dashboard:**
-- `GET /stats/dashboard` - Dashboard statistics
-- `GET /stats/reports` - Detailed analytics & reports
-
-**Notifications:**
-- `GET /notifications/unread` - Get unread notification count
 
 ---
 
 ## 🌍 Environment Variables
 
-Create `.env.local` in project root:
+Create a `.env.local` file in the project root:
 
 ```env
-# API Configuration
+# Backend API base URL (required if backend is not on localhost:5001)
 VITE_API_URL=http://localhost:5001/api
-
-# Optional: Deployment-specific variables
-# Add as needed for your environment
 ```
 
-### Available Variables
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `VITE_API_URL` | `/api` | Backend API base URL |
+| `VITE_API_URL` | `/api` | Full URL to the backend API. Overrides the Vite proxy in production. |
+
+> **Important:** All Vite environment variables must be prefixed with `VITE_` to be accessible in the browser.
 
 ---
 
 ## 📦 Deployment
 
-### Deploy to Vercel
+### Deploy to Vercel (Recommended)
 
-The project is configured for Vercel deployment:
+OrgVibe Pro is pre-configured for zero-config Vercel deployment:
 
-**Pre-configured:**
-- `vercel.json` handles SPA routing
-- Clean URLs enabled
-- Rewrites all routes to `/index.html`
+1. Push your code to a GitHub repository
+2. Go to [vercel.com](https://vercel.com) → **New Project** → Import your repo
+3. Add the environment variable in the Vercel dashboard:
+   - `VITE_API_URL` = `https://your-backend-url.com/api`
+4. Click **Deploy** — Vercel handles the build automatically
 
-**Steps:**
-1. Push code to GitHub
-2. Import repository in Vercel
-3. Set environment variables in Vercel dashboard
-4. Deploy!
+The `vercel.json` ensures all routes are served by `index.html` (required for React SPA routing):
 
-**Vercel Configuration:**
 ```json
 {
   "cleanUrls": true,
@@ -537,146 +697,119 @@ The project is configured for Vercel deployment:
 }
 ```
 
-### Deploy to Other Platforms
+---
 
-**Netlify:**
+### Deploy to Netlify
+
 ```bash
-# Build
+# 1. Build the app
 npm run build
 
-# Output: dist/ folder
-# Deploy dist/ folder
+# 2. Install Netlify CLI (if not already installed)
+npm install -g netlify-cli
+
+# 3. Deploy the dist/ folder
+netlify deploy --prod --dir=dist
 ```
 
-**Docker:**
+Create a `_redirects` file in the `public/` folder for SPA routing:
+```
+/*    /index.html   200
+```
+
+---
+
+### Deploy with Docker
+
 ```dockerfile
-FROM node:18-alpine
+FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
 RUN npm run build
-EXPOSE 3000
-CMD ["npm", "run", "preview"]
+
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
 ```
-
----
-
-## 🛠 Development
-
-### Available Scripts
-
-```bash
-# Start dev server (port 3000)
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
-```
-
-### Development Workflow
-
-1. Create feature branch from `main`
-2. Make changes
-3. Test locally
-4. Push to GitHub
-5. Create Pull Request
-6. After approval, merge to `main`
-
-### Code Style
-
-- Use functional components with Hooks
-- Follow React best practices
-- Keep components focused and reusable
-- Use descriptive variable/function names
-
----
-
-## 📱 Responsive Design
-
-The application is fully responsive:
-- **Mobile**: 320px and up
-- **Tablet**: 768px and up
-- **Desktop**: 1024px and up
-
-CSS uses:
-- CSS Grid for layouts
-- Flexbox for component alignment
-- CSS Variables for theming
-- Mobile-first approach
 
 ---
 
 ## 🐛 Troubleshooting
 
-### Common Issues
-
-**Port 3000 already in use:**
+### App won't start — "Port 3000 already in use"
 ```bash
+# Run on a different port
 npm run dev -- --port 3001
 ```
 
-**API connection errors:**
-- Verify backend is running on `http://localhost:5001`
-- Check `VITE_API_URL` in `.env.local`
-- Ensure CORS is enabled on backend
+---
 
-**Build errors:**
+### API calls failing — Network Error or 404
+1. Make sure the backend server is running on `http://localhost:5001`
+2. Check your `.env.local` file has the correct `VITE_API_URL`
+3. Verify CORS is enabled on the backend
+4. Open browser DevTools → **Network** tab → inspect the failing request
+
+---
+
+### Blank page after login
+1. Open **DevTools Console** — look for JavaScript errors
+2. Check **DevTools → Application → Local Storage** for a `ws_token` entry
+3. Try logging out and back in — the token may have expired
+4. Clear browser cache and reload
+
+---
+
+### Build errors — missing modules
 ```bash
-# Clear node_modules and reinstall
-rm -rf node_modules package-lock.json
+# Clear cache and reinstall all dependencies
+Remove-Item -Recurse -Force node_modules
+Remove-Item package-lock.json
 npm install
 ```
 
-**Blank page after login:**
-- Check browser console for errors
-- Verify JWT token in localStorage
-- Check API response in Network tab
-
 ---
 
-## 📞 Support & Contact
-
-For issues, questions, or contributions:
-- **GitHub**: [B2B-workBeta-app-Frontend](https://github.com/igene-wa18/B2B-workBeta-app-Frontend)
-- **Live Demo**: [https://b2-b-work-beta-app-frontend.vercel.app](https://b2-b-work-beta-app-frontend.vercel.app)
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** - see [LICENSE](./LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- Built with [React](https://react.dev)
-- Powered by [Vite](https://vitejs.dev)
-- Charts by [Chart.js](https://www.chartjs.org)
-- Deployed on [Vercel](https://vercel.com)
+### Charts not rendering
+- Make sure `Chart.js` and `react-chartjs-2` are installed: `npm install chart.js react-chartjs-2`
+- Verify the backend `/stats/reports` endpoint is returning data
 
 ---
 
 ## 📈 Roadmap
 
-- [ ] Dark mode toggle
-- [ ] Biometric attendance (Mobile)
-- [ ] Advanced reporting & analytics
-- [ ] Email notifications
-- [ ] SMS alerts
+- [ ] Dark/Light mode toggle
+- [ ] Biometric attendance support (Mobile)
+- [ ] Advanced reporting & custom date ranges
+- [ ] Push notifications (Web Push API)
+- [ ] SMS alerts integration
 - [ ] Mobile app (React Native)
 - [ ] Multi-language support (i18n)
-- [ ] Performance optimization
 - [ ] Accessibility improvements (WCAG 2.1)
-- [ ] Unit & integration tests
+- [ ] Unit & integration tests (Vitest + Testing Library)
+- [ ] Two-factor authentication (2FA)
 
 ---
 
-**Last Updated:** June 2026  
-**Version:** 0.0.1 (Beta)
+## 📄 License
 
-For more information about WORKFORCE PRO features and capabilities, please visit the [live demo](https://b2-b-work-beta-app-frontend.vercel.app).
+This project is licensed under the **MIT License** — see the [LICENSE](./LICENSE) file for details.
+
+---
+
+## 🙏 Acknowledgments
+
+- UI built with [React](https://react.dev)
+- Blazing-fast builds by [Vite](https://vitejs.dev)
+- Beautiful charts by [Chart.js](https://www.chartjs.org)
+- Deployed effortlessly on [Vercel](https://vercel.com)
+
+---
+
+**Last Updated:** June 2026 &nbsp;|&nbsp; **Version:** 1.0.0 &nbsp;|&nbsp; **Brand:** OrgVibe Pro
+
+For questions, bug reports, or feature requests, open an issue on the [GitHub repository](https://github.com/igene-wa18/B2B-workBeta-app-Frontend).
