@@ -24,8 +24,8 @@ export default function Register() {
             <div className="auth-bg"><div className="orb orb-1"></div><div className="orb orb-2"></div><div className="orb orb-3"></div></div>
             <div className="auth-card">
                 <div className="auth-header">
-                    <div className="auth-logo">✦</div>
-WORKFORCE<span>PRO</span>
+                    <img src="/logo.png" alt="Logo" className="auth-logo-img" />
+                    <div className="auth-brand-text">ORGVIBE<span>PRO</span></div>
                     <p>Create your account</p>
                 </div>
                 {error && <div className="alert alert-error">{error}</div>}

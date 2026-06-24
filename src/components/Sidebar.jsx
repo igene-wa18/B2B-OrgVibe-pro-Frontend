@@ -47,8 +47,8 @@ export default function Sidebar() {
     return (
         <aside className="sidebar">
             <div className="sidebar-brand">
-                <div className="brand-icon">✦</div>
-WORKFORCE<span className="brand-pro">PRO</span>
+                <img src="/logo.png" alt="Logo" className="brand-logo" />
+                ORGVIBE<span className="brand-pro">PRO</span>
             </div>
             <nav className="sidebar-nav">
                 {items.map(item => (
