@@ -2,7 +2,7 @@
 
 > **Enterprise-grade HR & Workforce Management Platform** built with React, Vite, and Chart.js.
 
-OrgVibe Pro is a modern, role-based B2B organization management application that empowers companies to manage attendance, leaves, expenses, employees, departments, and internal communications — all from a single, beautiful dark-themed dashboard.
+OrgVibe Pro is a modern, role-based B2B organization management application that empowers companies to manage attendance, leaves, expenses, employees, departments, daily task assignments, and internal communications — all from a single, beautiful dark-themed dashboard.
 
 **🔗 Live Demo:** [https://b2-b-work-beta-app-frontend.vercel.app](https://b2-b-work-beta-app-frontend.vercel.app)
 
@@ -43,6 +43,7 @@ OrgVibe Pro is a modern, role-based B2B organization management application that
 | 👥 **Employee Directory** | Searchable database with role and department info |
 | 🏢 **Department Management** | Create departments and assign employees |
 | 📝 **Memos & Announcements** | Internal communication with real-time notifications |
+| ✅ **ToDo List & Task Tracker** | Managers assign daily tasks to employees with due dates, notes, and real-time completion tracking |
 
 The platform supports **4 role-based access levels** — Admin, Department Head, Manager, and Employee — with granular permission controls so every user sees exactly what they need.
 
@@ -110,6 +111,20 @@ Employees submit expenses with a category, amount, description, and optional rec
 Post internal memos or company-wide announcements. All users receive real-time notifications when a new memo is published.
 
 ![Memos Page](./screenshots/Screenshot%202026-06-24%20133500.png)
+
+---
+
+### ✅ ToDo List — Team Task Tracker *(New)*
+Managers get a live team task tracker showing Today's Work, Today's Completed, and History sections. Auto-refreshes every 8 seconds to reflect employee completions in real time.
+
+![ToDo List Page](./screenshots/Screenshot%202026-08-08%20162044.png)
+
+---
+
+### ✅ ToDo List — Create Today's Work Modal *(New)*
+Click **Today's Work** in the top bar to open the task creation modal. Switch between **Self ToDo** (personal checklist) and **Assign to Team** (assign tasks with title, due date, time, and notes to selected employees).
+
+![Create Today's Work Modal](./screenshots/Screenshot%202026-08-08%20162022%20-%20Copy.png)
 
 ---
 
