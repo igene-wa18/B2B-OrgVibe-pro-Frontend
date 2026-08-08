@@ -433,6 +433,44 @@ Navigate to **Memos**:
 
 ---
 
+### ✅ ToDo List & Team Task Tracker *(New Feature)*
+
+OrgVibe Pro now includes a powerful daily task management system that connects managers directly to their team through structured task assignments and real-time progress tracking.
+
+#### 📌 How It Works
+
+**For Managers / Admins:**
+- Click the **🗒 Today's Work** button in the top navigation bar to open the task creation modal.
+- Choose between two modes:
+  - **Self ToDo** — Create a private personal checklist for your own daily work.
+  - **Assign to Team** — Create a task with a title, due date, due time, and notes/instructions, then select specific employees to assign it to.
+- Assigned tasks appear instantly in the selected employees' **ToDo List** page.
+
+**For Employees:**
+- Open the **ToDo List** page from the sidebar to see all tasks assigned to you.
+- Each task shows the title, due date/time, and any notes from the manager.
+- Tick the checkbox when a task is done — the manager sees the completion update **in real time** (auto-refreshes every 8 seconds).
+
+#### 🗂 Task Sections
+
+| Section | Description |
+|---------|-------------|
+| **🔥 Today's Work** | Active tasks assigned or scheduled for today |
+| **⚠️ Delayed** | Tasks from previous days that were not completed (auto-rolled over) |
+| **✅ Today's Completed** | Tasks ticked as done today |
+| **📁 History** | All completed tasks from previous days — deletable individually or in bulk |
+
+#### 🔄 Auto-Rollover & History Cleanup
+- Any task not completed by end of day **automatically rolls over** into the **Delayed** section the next day, so nothing is ever lost.
+- Completed tasks move to **History** and are automatically deleted after **30 days** to keep the workspace clean.
+- History can also be manually cleared at any time using the **Clear All History** button.
+
+#### 📊 Team Task Tracker (Manager View)
+
+Managers see a **Team Task Tracker** panel with a live progress bar showing how many employees have completed their assigned tasks. Each employee's completion status is visible in real time with assignee pills and checkmarks.
+
+---
+
 ## 👥 User Roles & Permissions
 
 OrgVibe Pro uses **Role-Based Access Control (RBAC)**. Each role unlocks progressively more functionality:

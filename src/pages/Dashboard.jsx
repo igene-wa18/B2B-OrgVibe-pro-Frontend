@@ -108,16 +108,16 @@ export default function Dashboard() {
                     <div className="card attendance-card">
                         <h3>Today's Attendance</h3>
                         {!todayAtt || !todayAtt.check_in ? (
-                            <button className="btn btn-success btn-lg" onClick={checkIn}>☀️ Check In</button>
+                            <button className="btn btn-success btn-lg" onClick={checkIn}> Check In</button>
                         ) : !todayAtt.check_out ? (
                             <div>
-                                <p className="text-success">✅ Checked in at {new Date(todayAtt.check_in).toLocaleTimeString()}</p>
-                                <button className="btn btn-warning btn-lg" onClick={checkOut}>🌙 Check Out</button>
+                                <p className="text-success">Checked in at {new Date(todayAtt.check_in).toLocaleTimeString()}</p>
+                                <button className="btn btn-warning btn-lg" onClick={checkOut}>Check Out</button>
                             </div>
                         ) : (
                             <div>
-                                <p className="text-success">✅ Checked in: {new Date(todayAtt.check_in).toLocaleTimeString()}</p>
-                                <p className="text-muted">🌙 Checked out: {new Date(todayAtt.check_out).toLocaleTimeString()}</p>
+                                <p className="text-success">Checked in: {new Date(todayAtt.check_in).toLocaleTimeString()}</p>
+                                <p className="text-muted">Checked out: {new Date(todayAtt.check_out).toLocaleTimeString()}</p>
                                 <p className="text-info">⏱ Hours: {todayAtt.hours_worked}h</p>
                             </div>
                         )}
@@ -127,11 +127,11 @@ export default function Dashboard() {
                 {/* Stats Cards */}
                 {stats && (
                     <div className="stats-grid">
-                        <div className="stat-card"><div className="stat-icon">👥</div><div className="stat-value">{stats.totalUsers}</div><div className="stat-label">Total Employees</div></div>
-                        <div className="stat-card"><div className="stat-icon">🏢</div><div className="stat-value">{stats.totalDepts}</div><div className="stat-label">Departments</div></div>
-                        <div className="stat-card"><div className="stat-icon">✅</div><div className="stat-value">{stats.presentToday}</div><div className="stat-label">Present Today</div></div>
-                        <div className="stat-card"><div className="stat-icon">📅</div><div className="stat-value">{stats.pendingLeaves}</div><div className="stat-label">Pending Leaves</div></div>
-                        <div className="stat-card"><div className="stat-icon">💰</div><div className="stat-value">{stats.pendingExpenses}</div><div className="stat-label">Pending Expenses</div></div>
+                        <div className="stat-card"><div className="stat-icon"></div><div className="stat-value">{stats.totalUsers}</div><div className="stat-label">Total Employees</div></div>
+                        <div className="stat-card"><div className="stat-icon"></div><div className="stat-value">{stats.totalDepts}</div><div className="stat-label">Departments</div></div>
+                        <div className="stat-card"><div className="stat-icon"></div><div className="stat-value">{stats.presentToday}</div><div className="stat-label">Present Today</div></div>
+                        <div className="stat-card"><div className="stat-icon"></div><div className="stat-value">{stats.pendingLeaves}</div><div className="stat-label">Pending Leaves</div></div>
+                        <div className="stat-card"><div className="stat-icon"></div><div className="stat-value">{stats.pendingExpenses}</div><div className="stat-label">Pending Expenses</div></div>
                     </div>
                 )}
 

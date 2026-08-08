@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import api from '../utils/api';
 import NotificationPanel from './NotificationPanel';
+import TodoModal from './TodoModal';
 
 export default function Topbar({ title }) {
     const { user } = useAuth();
     const [unreadCount, setUnreadCount] = useState(0);
     const [showPanel, setShowPanel] = useState(false);
+    const [showTodoModal, setShowTodoModal] = useState(false);
 
     const fetchUnreadCount = async () => {
         try {
@@ -29,6 +31,9 @@ export default function Topbar({ title }) {
         <header className="topbar">
             <h1 className="topbar-title">{title}</h1>
             <div className="topbar-actions">
+                <button className="btn btn-primary btn-sm" onClick={() => setShowTodoModal(true)}>
+                    📝 Today's Work
+                </button>
                 {user && (
                     <div className="bell-container" onClick={() => setShowPanel(true)}>
                         <span className="bell-icon">🔔</span>
@@ -45,6 +50,10 @@ export default function Topbar({ title }) {
                     onClose={() => setShowPanel(false)} 
                     onNotificationRead={fetchUnreadCount} 
                 />
+            )}
+            
+            {showTodoModal && (
+                <TodoModal onClose={() => setShowTodoModal(false)} />
             )}
         </header>
     );

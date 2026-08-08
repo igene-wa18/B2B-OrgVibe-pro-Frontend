@@ -11,6 +11,7 @@ import Expenses from './pages/Expenses';
 import Departments from './pages/Departments';
 import Employees from './pages/Employees';
 import Memos from './pages/Memos';
+import Todos from './pages/Todos';
 
 import './App.css';
 
@@ -24,6 +25,7 @@ function AppLayout() {
             <main className="main-content">
                 <Routes>
                     <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/todos" element={<Todos />} />
                     <Route path="/attendance" element={<Attendance />} />
                     <Route path="/leaves" element={<Leaves />} />
                     <Route path="/expenses" element={<ProtectedRoute roles={['manager', 'dept_head', 'admin']}><Expenses /></ProtectedRoute>} />
